@@ -1,0 +1,53 @@
+{% load bootstrap4 %}
+{% load static %}
+{% load i18n %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if title %}
+        <title>{% trans 'My Portfolio - ' %}{% trans title %}</title>
+    {% else %}
+        <title>{% trans 'My Portfolio' %}</title>
+    {% endif %}
+
+    {% block styles %}
+        {% bootstrap_css %}
+        <link rel="stylesheet"
+              href="{% static 'portfolio_app/css/font-awesome.min.css' %}">
+        <link rel="icon" href="data:;base64,=">
+    {% endblock %}
+
+
+<style>
+
+    body {
+        font-family: Roboto, Condensed, sans-serif;
+        font-weight: 500;
+        font-size: medium;
+        color: rgba(0, 0, 0, 1);
+        line-height: 1.5;
+    }
+
+</style>
+
+</head>
+<body>
+{% include 'navbar.html' %}
+{% block content %}
+{% endblock %}
+{% include "footer.html" %}
+
+{% block scripts %}
+    <script src="{% static 'portfolio_app/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'portfolio_app/js/bootstrap.min.js' %}"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    {% bootstrap_javascript %}
+{% endblock %}
+
+</body>
+</html>

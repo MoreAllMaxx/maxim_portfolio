@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="container">
+        <h2 class="text-center mt-5">{% trans 'Feedback' %}</h2>
+        <div class="heading-wrapper mt-5">
+            <div class="heading">
+                {% blocktrans %}
+                <p class="title">
+                    Would like to contact me?
+                </p>
+
+                <p class="subtitle">
+                    Kindly, send an email to <a href="mailto:frayneqt@gmail.com">frayneqt@gmail.com</a>
+                </p>
+                <p>
+                    or use the form below:
+                </p>
+                {% endblocktrans %}
+            </div>
+            <form class="form-group mx-sm-2 mb-1" id="form_custom" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form layout='inline' %}
+                <input onclick="" type="submit" class="btn btn-info " value="{% trans 'Send Feedback' %}">
+            </form>
+        </div>
+    </div>
+{% endblock %}

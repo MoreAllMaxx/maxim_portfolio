@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load static %}
+{% load cache %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% cache 240 navbar LANGUAGE_CODE %}
+{% block content %}
+    <div class="row justify-content-center">
+
+        <div class="col-md-3">
+            <div class="card card-body h-100">
+                <img class="card-img-top"
+                     src="{% static 'portfolio_app/images/photo_maxim2.jpg' %}" alt="image_Maxim">
+                <hr>
+                <h4>{% trans "Hi I'm Maxim Dontsov!" %}</h4>
+                <p>{% trans 'I love coding, creating and collaborating' %}</p>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card card-body h-100 p-3">
+
+                <h4>{% trans 'About me' %}</h4>
+                <hr>
+                <p>{% blocktrans %}
+                    I code in Python 3 (applied and systems programming) since 2020.
+                    Also I am familiar with a lot of algorithms and a functionality of many Python libraries.
+                {% endblocktrans %}</p>
+                <p>{% blocktrans %}
+                    I am passionate about building Django web applications that are performant, accessible,
+                    and user-friendly. Currently, I am very interested in backend development and
+                    working with databases. I also don't mind working with Frontend development.
+                {% endblocktrans %}</p>
+                <p style="margin-bottom: 0">{% trans 'Education:' %}</p>
+                <ul id="card-ul">
+                    <li id="card-li">{% blocktrans %}
+                        Higher technical, graduated from the Ural Federal University (UrFU)
+                        with a degree in Optical Technologies and Materials in 2018.
+                    {% endblocktrans %}</li>
+                    <li id="card-li">{% blocktrans %}
+                        Passed the courses of translation of technical and business documentation
+                        in English in 2017 at UrFU. I can maintain conversational English.
+                    {% endblocktrans %}</li>
+                    <li id="card-li">{% blocktrans %}
+                        Completed Skillbox courses in Python programming in 2020-2021.
+                    {% endblocktrans %}</li>
+                </ul>
+                <p>
+                    {% blocktrans %}I live in Russia, the city of Yekaterinburg. I am 27 years old.{% endblocktrans %}
+                </p>
+                <p>{% blocktrans %}
+                    Key skills:
+                    Python 3.9, aiogram, numpy, PyQT, Pygame, unittest, Django, HTML/CSS, bootstrap-grids,
+                    databases via ORM, can work with many Python libraries and programming technologies.
+                {% endblocktrans %}</p>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+            <div class="card card-body h-100">
+                <h5>{% blocktrans %}How I Became a Programmer{% endblocktrans %}</h5>
+                <hr>
+                <p>{% blocktrans %}
+                    I started learning programming in 2019. Then at work as a development engineer
+                    (designer) of electronic components, there was a requirement to develop / edit
+                    microcontroller firmware, Arduino modules.
+                {% endblocktrans %}</p>
+                <p>{% blocktrans %}
+                    My first introduction to commercial programming began with the Wiring language, along with
+                    I studied the imperative approach of programming in C/C++ languages.
+                    Participated in writing firmware for experimental electronic blocks for processing electronic
+                    signals.
+                {% endblocktrans %}</p>
+                <p>{% blocktrans %}
+                    It was from that moment that I became interested in programming. I chose Python as my first
+                    language to learn – I liked his unusual style, ease of writing code and a large number of
+                    libraries to work with.
+                {% endblocktrans %}</p>
+
+                <p>{% blocktrans %}
+                    In 2021, I completed the "Python developer from scratch" course, as well as courses
+                    on Django and website development from Skillbox. The most valuable thing in training
+                    for me was individual work with a mentor who checked my practical assignments.
+                    Thanks to his advice, I understood how to make my code even better.
+                {% endblocktrans %}</p>
+                <p>{% blocktrans %}
+                    In addition, I studied courses in English on creating websites and applications,
+                    course "Algorithms and Data Structures in Python 3" from MIPT, book "Grokking Algorithms",
+                    "Python Tricks: The Book", "Deep Learning from Scratch. Building with Python from First Principles".
+                {% endblocktrans %}</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card card-body h-100">
+                <h5>{% trans 'My programming experience' %}</h5>
+                <hr>
+                <p style="margin-bottom: 0">
+                    {% blocktrans %}Since August 2021, I have developed on freelance:{% endblocktrans %}
+                </p>
+                <ul id="card-ul">
+                    <li id="card-li">
+                        {% blocktrans %}Telegram bots using the aiogram library{% endblocktrans %}
+                    </li>
+                    <li id="card-li">
+                        {% blocktrans %}Services for collecting data{% endblocktrans %}
+                    </li>
+                    <li id="card-li">
+                        {% blocktrans %}E-Mailing Services{% endblocktrans %}
+                    </li>
+                    <li id="card-li">
+                        {% blocktrans %}Django Applications{% endblocktrans %}
+                    </li>
+                    <li id="card-li">
+                        {% blocktrans %}Automated tests for finished projects{% endblocktrans %}
+                    </li>
+                    <li id="card-li">
+                        {% blocktrans %}Adding the functionality of the async library to existing projects
+                        {% endblocktrans %}
+                    </li>
+                </ul>
+                <p style="margin-bottom: 0">
+                    {% blocktrans %}I write various scripts in Python:{% endblocktrans %}
+                </p>
+                <ul id="card-ul">
+                    <li id="card-li">{% blocktrans %}
+                        Site parsers using beautifulsoup, scrapy spider libraries
+                    {% endblocktrans %}</li>
+                    <li id="card-li">{% blocktrans %}
+                        Processing information from json, databases, etc.
+                    {% endblocktrans %}</li>
+                    <li id="card-li">{% blocktrans %}
+                        Image processing with opencv library
+                    {% endblocktrans %}</li>
+                </ul>
+                <p>
+                    {% blocktrans %}You can see some of my work on my github, link below.{% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card card-body h-100">
+                <h5>{% trans 'What do I expect from work?' %}</h5>
+                <hr>
+                <p>{% blocktrans %}
+                    I am ready to become part of an IT team, where my knowledge and experience in programming,
+                    teamwork experience, as well as the thinking of a development engineer.
+                {% endblocktrans %}</p>
+                <p>{% blocktrans %}
+                    I approach work proactively and responsibly: for example, when working on a large task,
+                    I divide it into smaller parts, independently plan tasks and their priority,
+                    I try to meet deadlines and am open to constructive feedback.
+                {% endblocktrans %}</p>
+                <p>{% blocktrans %}
+                    I am interested in large-scale projects that develop my thinking and programming skills.
+                    My priority is to work remotely.
+                {% endblocktrans %}</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        p, h4, h5, #card-li {
+            text-indent: 0;
+        }
+
+        #card-ul {
+            padding-left: 15px;
+            list-style-type: '– ';
+        }
+    </style>
+{% endblock %}
+{% endcache %}

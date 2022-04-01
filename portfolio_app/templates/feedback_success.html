@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+<div class="container port">
+        <div class="home">
+            <div class="heading1 text-center">
+                    <h3>{% trans 'Your message has been sent successfully. Thank you for contacting me!' %}</h3>
+            </div>
+            <br>
+            <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-sm btn-outline-info">
+                    <a class="nav-link" href="{% url 'index' %}">{% trans 'Home' %}</a>
+            </button>
+            </div>
+        </div>
+</div>
+{% endblock %}
